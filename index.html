@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>form</title>
+    <!-- <script src="script.js"></script> -->
+    <style>
+        body {
+            background-color: azure;
+        }
+
+        .all {
+            margin: 100px 500px;
+            height: 400px;
+            width: 600px;
+            border: 2px solid black;
+            font-family: 'Times New Roman', Times, serif;
+            background-color: antiquewhite;
+        }
+
+        form {
+            margin: 100px;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        input {
+            margin-top: 10px;
+        }
+
+        .area {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="all">
+        <form  name="form" method="post" onsubmit="return formdetail()">
+            First Name:<input type="text" name="firstname"><br>
+            Last Name:<input type="text" name="lastname"><br>
+            Phone No:<input type="number" name="number"><br>
+            City:<input type="text" name="city"><br>
+            Address:<textarea class="area" type="text" name="address"></textarea><br>
+            <button type="submit" value="Submit">Submit</button>
+
+
+        </form>
+    </div>
+
+    <script>
+        function formdetail() {
+            var fname = document.form.firstname.value;
+            var lname = document.form.lastname.value;
+            var ph = document.form.number.value;
+            var city = document.form.city.value;
+            var add = document.form.address.value;
+            if (fname == null || fname == "") {
+                alert("First name is not Filled");
+                return false;
+            }
+            else if (lname == null || lname == "") {
+                alert("Last name is not Filled");
+                return false;
+            }
+            else if (ph.length!=10) {
+                alert("Phone number is Invalid");
+                return false;
+            }
+            
+            else if (city == null || city == "") {
+                alert("City is Invalid");
+                return false;
+            }
+            else if (add == null || add == "") {
+                alert("Address is invalid");
+                return false;
+            }
+            else{
+                alert("your form is Submitted");
+            }
+
+        }
+
+    </script>
+
+</body>
+
+</html>
